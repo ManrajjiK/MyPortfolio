@@ -19,24 +19,6 @@ This project showcases my **skills, projects, and achievements** as a Mechatroni
 
 ---
 
-## 📂 Project Structure
-MyPortfolio/
-│── public/
-│── src/
-│ ├── components/
-│ │ ├── Hero.jsx
-│ │ ├── Projects.jsx
-│ │ └── Achievements.jsx
-│ ├── assets/
-│ └── App.js
-│── package.json
-│── tailwind.config.js
-│── README.md
-
-
-
----
-
 ## 🛠️ Tech Stack
 - ⚛️ React.js  
 - 🎨 Tailwind CSS  
