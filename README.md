@@ -15,8 +15,7 @@ This project showcases my **skills, projects, and achievements** as a Mechatroni
 ---
 
 ## 🖼️ Preview
-🔗 Live Demo: [Click Here]([(https://manraj-portfolio.vercel.app/)])  
-
+🔗  Live Demo: [Click Here](https://manraj-portfolio.vercel.app/)
 ---
 
 ## 🛠️ Tech Stack
