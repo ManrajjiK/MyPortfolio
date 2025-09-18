@@ -1,12 +1,53 @@
-# React + Vite
+# 🌐 My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio repository! 🚀  
+This project showcases my **skills, projects, and achievements** as a Mechatronics Engineer and MERN Stack Developer.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+- 🎭 **Hero Section** with typewriter animation & profile image  
+- 🛠️ **Projects Showcase** with GitHub links and descriptions  
+- 🏆 **Achievements & Education** section  
+- 🌙 **Dark/Light Mode** support  
+- ⚡ **Responsive Design** (mobile & desktop friendly)  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖼️ Preview
+🔗 Live Demo: [Click Here](https://your-portfolio-link.vercel.app)  
+
+---
+
+## 📂 Project Structure
+MyPortfolio/
+│── public/
+│── src/
+│ ├── components/
+│ │ ├── Hero.jsx
+│ │ ├── Projects.jsx
+│ │ └── Achievements.jsx
+│ ├── assets/
+│ └── App.js
+│── package.json
+│── tailwind.config.js
+│── README.md
+
+
+
+---
+
+## 🛠️ Tech Stack
+- ⚛️ React.js  
+- 🎨 Tailwind CSS  
+- 🌀 Framer Motion  
+- ⌨️ react-simple-typewriter  
+- 🌑 Dark Mode Friendly  
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/ManrajjiK/MyPortfolio.git
