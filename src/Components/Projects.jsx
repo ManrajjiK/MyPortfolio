@@ -78,23 +78,39 @@ function Projects() {
         {filteredProjects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform cursor-pointer"
+            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg cursor-pointer
+                       hover:shadow-2xl transform transition-all duration-500 relative overflow-hidden"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
             whileHover={{ scale: 1.05 }}
           >
+            {/* Category Badge */}
+            <span className="absolute top-4 right-4 bg-gradient-to-r from-green-400 to-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow">
+              {project.category}
+            </span>
+
             <h3 className="text-2xl font-bold mb-3">{project.name}</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-3">{project.description}</p>
-            <p className="text-sm mb-4">
-              <span className="font-semibold">Tech Stack:</span> {project.tech.join(", ")}
-            </p>
+
+            {/* Tech Tags */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((techItem, i) => (
+                <span
+                  key={i}
+                  className="bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2 py-1 rounded-full"
+                >
+                  {techItem}
+                </span>
+              ))}
+            </div>
+
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline font-medium"
+              className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-purple-500 hover:to-indigo-500 shadow-lg transition-transform transform hover:scale-105"
             >
               View Project
             </a>
@@ -102,7 +118,7 @@ function Projects() {
         ))}
       </div>
 
-      {/* Bottom Horizontal Buttons */}
+      {/* Bottom Navigation Buttons */}
       <motion.div
         className="mt-16 flex flex-wrap justify-center gap-6"
         initial={{ opacity: 0, y: 40 }}

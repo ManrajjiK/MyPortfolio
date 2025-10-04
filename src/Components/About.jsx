@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 
 const skills = [
   {
-    icon: <FaLaptopCode className="text-5xl mb-4 text-blue-500 mx-auto" />,
+    icon: <FaLaptopCode className="text-5xl mb-4 text-blue-400 mx-auto" />,
     title: "Frontend",
     desc: "React, TailwindCSS, HTML, CSS, JavaScript",
     color: "from-blue-100 to-blue-200 dark:from-blue-800 dark:to-blue-700"
   },
   {
-    icon: <FaDatabase className="text-5xl mb-4 text-green-500 mx-auto" />,
+    icon: <FaDatabase className="text-5xl mb-4 text-green-400 mx-auto" />,
     title: "Backend",
     desc: "Node.js, Express, MongoDB, REST APIs",
     color: "from-green-100 to-green-200 dark:from-green-800 dark:to-green-700"
   },
   {
-    icon: <FaLightbulb className="text-5xl mb-4 text-yellow-500 mx-auto" />,
+    icon: <FaLightbulb className="text-5xl mb-4 text-yellow-400 mx-auto" />,
     title: "Problem Solving",
     desc: "Data Structures, Algorithms, Logic & Creativity",
     color: "from-yellow-100 to-yellow-200 dark:from-yellow-700 dark:to-yellow-600"
@@ -27,11 +27,11 @@ const skills = [
 function About() {
   return (
     <section
-      className="relative p-16 bg-gradient-to-r from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100"
+      className="relative p-16 bg-gradient-to-r from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden"
       id="about"
     >
-      {/* Background Overlay */}
-      <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+      {/* Animated Background Overlay */}
+      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-[floatBG_20s_linear_infinite]"></div>
 
       {/* Title */}
       <motion.h2
@@ -47,15 +47,15 @@ function About() {
         {/* Text Section */}
         <motion.div
           className="space-y-6 text-lg leading-relaxed"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
           <p>
-            Hi! I'm <span className="font-bold text-blue-500">Manraj Kewat</span>, a passionate{" "}
-            <span className="font-semibold">Web Developer</span> and{" "}
-            <span className="font-semibold">Mechatronics Engineer</span>.  
+            Hi! I'm <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Manraj Kewat</span>, a passionate{" "}
+            <span className="font-semibold text-indigo-500">Web Developer</span> and{" "}
+            <span className="font-semibold text-green-500">Mechatronics Engineer</span>.  
             I love turning complex problems into elegant digital experiences.
           </p>
           <p>
@@ -69,23 +69,28 @@ function About() {
         </motion.div>
 
         {/* Skills Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
+        >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              className={`p-6 bg-gradient-to-br ${skill.color} dark:shadow-lg rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all text-center cursor-pointer`}
-              whileHover={{ scale: 1.08 }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.7 }}
+              className={`p-6 rounded-2xl shadow-lg cursor-pointer bg-white/20 backdrop-blur-lg border border-white/30 hover:border-gradient-to-r from-purple-400 to-pink-500 transform transition-all text-center`}
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.08, rotate: 1, boxShadow: "0px 20px 50px rgba(0,0,0,0.3)" }}
             >
-              {skill.icon}
-              <h3 className="font-bold text-xl mb-2">{skill.title}</h3>
+              <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ repeat: Infinity, duration: 4 }}>
+                {skill.icon}
+              </motion.div>
+              <h3 className="font-bold text-xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">{skill.title}</h3>
               <p className="text-gray-700 dark:text-gray-200">{skill.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Buttons Section */}
@@ -98,25 +103,25 @@ function About() {
       >
         <Link
           to="/about"
-          className="px-6 py-3 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600 transition transform hover:scale-105 shadow-lg"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold shadow-lg hover:shadow-2xl transition transform hover:scale-110"
         >
           About
         </Link>
         <Link
           to="/projects"
-          className="px-6 py-3 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition transform hover:scale-105 shadow-lg"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold shadow-lg hover:shadow-2xl transition transform hover:scale-110"
         >
           Projects
         </Link>
         <Link
           to="/achievements"
-          className="px-6 py-3 rounded-full bg-yellow-500 text-white font-semibold hover:bg-yellow-600 transition transform hover:scale-105 shadow-lg"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold shadow-lg hover:shadow-2xl transition transform hover:scale-110"
         >
           Achievements
         </Link>
         <Link
           to="/contact"
-          className="px-6 py-3 rounded-full bg-purple-500 text-white font-semibold hover:bg-purple-600 transition transform hover:scale-105 shadow-lg"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold shadow-lg hover:shadow-2xl transition transform hover:scale-110"
         >
           Contact
         </Link>
@@ -126,3 +131,4 @@ function About() {
 }
 
 export default About;
+
