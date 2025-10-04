@@ -6,7 +6,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
     { name: "Achievements", path: "/achievements" },
@@ -18,7 +18,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div className="text-2xl font-extrabold tracking-wide text-gray-800 hover:text-blue-600 transition duration-300">
-          <Link to="/">Manraj Kewat</Link>
+          <Link to="/home">Manraj Kewat</Link>
         </div>
 
         {/* Desktop Links */}

@@ -1,5 +1,6 @@
+// App.js
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Splash from './Components/Splash';
 import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
@@ -10,9 +11,9 @@ import Contact from './Components/Contact';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        {/* Splash fullscreen page, no navbar */}
+        {/* Fullscreen Splash page */}
         <Route path="/" element={<Splash />} />
 
         {/* Main site pages with Navbar */}
@@ -51,7 +52,7 @@ function App() {
           </div>
         } />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
