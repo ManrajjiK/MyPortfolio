@@ -13,14 +13,14 @@ export const projectList = [
   { 
     name: "Portfolio Website", 
     description: "A personal portfolio website showcasing my skills, achievements, and projects with smooth animations and responsive UI.", 
-    link: "#", 
+    link: "https://github.com/ManrajjiK/MyPortfolio", 
     category: "React",
     tech: ["React.js", "Tailwind CSS", "Framer Motion"] 
   },
   { 
     name: "AyurHeaven", 
     description: "An interactive web app offering searchable profiles of medicinal plants, including their uses, preparation methods, and precautions. Built for SIH 2024 problem statement.", 
-    link: "https://ayur-heaven.vercel.app/", 
+    link: "https://github.com/ManrajjiK/AyurHeaven", 
     category: "React",
     tech: ["React.js", "Tailwind CSS", "REST APIs", "Vercel Deployment"] 
   },
