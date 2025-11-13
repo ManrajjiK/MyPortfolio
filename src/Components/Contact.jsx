@@ -85,7 +85,7 @@ function Contact() {
 
           <div className="flex items-center space-x-4 hover:scale-105 transition transform cursor-pointer">
             <FaPhone className="text-green-500 text-2xl" />
-            <span>+91 7974827245</span>
+            <span>+91 ----------</span>
           </div>
         </motion.div>
       </div>
